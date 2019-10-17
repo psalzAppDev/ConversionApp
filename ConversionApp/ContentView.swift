@@ -21,15 +21,9 @@ struct ContentView: View {
         static let feetToMeters = 1.0 / 3.281
         static let yardsToMeters = 1.0 / 1.094
         static let milesToMeters = 1609.344
+        
+        static let unitStrings = ["m", "km", "ft", "yd", "mi"]
     }
-    
-    private let unitStrings = [
-        "m",
-        "km",
-        "ft",
-        "yd",
-        "mi"
-    ]
     
     @State private var inputUnit = 0
     @State private var outputUnit = 0
@@ -125,8 +119,8 @@ struct ContentView: View {
                     Picker("Input Unit",
                            selection: $inputUnit) {
                         
-                        ForEach(0 ..< unitStrings.count) {
-                            Text("\(self.unitStrings[$0])")
+                            ForEach(0 ..< Unit.unitStrings.count) {
+                                Text("\(Unit.unitStrings[$0])")
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
@@ -137,8 +131,8 @@ struct ContentView: View {
                     Picker("Output Unit",
                            selection: $outputUnit) {
                         
-                        ForEach(0 ..< unitStrings.count) {
-                            Text("\(self.unitStrings[$0])")
+                            ForEach(0 ..< Unit.unitStrings.count) {
+                                Text("\(Unit.unitStrings[$0])")
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
