@@ -51,9 +51,6 @@ struct ContentView: View {
         case .miles:
             
             return number * Unit.milesToMeters
-            
-        @unknown default:
-            return nil
         }
     }
     
@@ -84,9 +81,6 @@ struct ContentView: View {
             
         case .miles:
             return toMeters / Unit.milesToMeters
-            
-        @unknown default:
-            return nil
         }
     }
     
